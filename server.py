@@ -1,9 +1,8 @@
 import asyncio
 import websockets
 
+
 async def echo(websocket):
-    print(f"New connection from {websocket.remote_address}")
-    
     try:
         # Send a message every second
         while True:
@@ -14,6 +13,7 @@ async def echo(websocket):
         print(f"Connection closed from {websocket.remote_address}")
     finally:
         await websocket.close()
+
 
 async def main():
     server = await websockets.serve(echo, "localhost", 8080)

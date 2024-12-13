@@ -12,7 +12,7 @@ async function run() {
 
     // Intercept WebSocket connections
 
-    await page.routeWebSocket("ws://localhost:8080", (ws) => {
+    await page.routeWebSocket(/ws:\/\/.*/, (ws) => {
         console.log("Route Intercepted");
         ws.send("TEST");
         ws.onMessage(message => {

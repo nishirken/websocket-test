@@ -27,7 +27,7 @@ async def run():
                 lambda message: message_handler(ws, message)
             )
 
-        await page.route_web_socket("ws://localhost:8080", route_handler)
+        await page.route_web_socket(r"^ws://.*", route_handler)
 
         # Set up the page to open the WebSocket client (HTML + JS)
         await page.goto("http://localhost:8000")  # URL of the HTML page served by the HTTP server

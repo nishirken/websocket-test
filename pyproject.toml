@@ -8,3 +8,6 @@ dependencies = [
     "playwright>=1.49.1",
     "websockets>=14.1",
 ]
+
+[tool.uv.sources]
+playwright = { git = "https://github.com/microsoft/playwright-python.git" }
